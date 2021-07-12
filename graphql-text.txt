@@ -1,0 +1,34 @@
+//mutation call
+
+mutation{
+  createCourse(input:{
+    courseName: "Js Bootcamp"
+    price: 199
+    stack: MOBILE
+    teachingAssists: [
+      {
+        firstName: "Aniruddha"
+        lastName: "Prasad"
+        experience: 1
+      },
+      {
+        firstName: "Himanshu"
+        lastName: "Raj"
+        experience: 4
+      }
+    ]
+  }){
+    id,
+    courseName
+  }
+}
+
+//query call
+query {
+  getCourse(id: "tbnOEA3r9cAncBIDVV9O4"){
+    id
+    teachingAssists{
+      experience
+    }
+  }
+}

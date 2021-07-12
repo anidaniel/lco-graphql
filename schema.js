@@ -1,4 +1,4 @@
-import { buildSchema } from "qraphql";
+import { buildSchema } from "graphql";
 
 const schema = buildSchema(`
     type Course {
