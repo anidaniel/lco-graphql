@@ -9,10 +9,10 @@ const schema = buildSchema(`
         language: String
         email: String
         stack: Stack
-        teachingAssists: [TeachAssist]
+        teachingAssists: [TeachingAssist]
     }
 
-    type TeachAssist {
+    type TeachingAssist {
         firstName: String
         lastName: String
         experience: Int
@@ -26,6 +26,17 @@ const schema = buildSchema(`
 
     type Query {
         getCourse(id: ID): Course
+    }
+
+    input CourseInput {
+        id: ID
+        courseName: String
+        category: String
+        price: Int
+        language: String
+        email: String
+        stack: Stack
+        teachingAssists: [TeachingAssistInput]
     }
 
 `);
