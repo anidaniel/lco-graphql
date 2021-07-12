@@ -30,13 +30,23 @@ const schema = buildSchema(`
 
     input CourseInput {
         id: ID
-        courseName: String
+        courseName: String!
         category: String
-        price: Int
+        price: Int!
         language: String
         email: String
         stack: Stack
-        teachingAssists: [TeachingAssistInput]
+        teachingAssists: [TeachingAssistInput]!
+    }
+
+    input TeachingAssistInput {
+        firstName: String
+        lastName: String
+        experience: Int
+    }
+
+    type Mutation {
+        createCourse(input: CourseInput): Course
     }
 
 `);
